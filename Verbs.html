@@ -1,125 +1,60 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>French Basic Verbs</title>
+    <title>French Basic Verbs - Two Days Notes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-
         h1 {
             color: #2c3e50;
         }
-
         h2 {
             color: #2980b9;
             border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
         }
-
         h3 {
             color: #3498db;
         }
-
-        ul {
+        ul, ol {
             margin-left: 20px;
         }
-
         li {
             margin: 5px 0;
         }
-
         p.example {
             margin-left: 40px;
             font-style: italic;
             color: #555;
         }
-
         table {
             border-collapse: collapse;
             margin: 10px 0;
             width: 80%;
         }
-
-        th,
-        td {
+        th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
         }
-
         th {
             background-color: #f2f2f2;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #2c3e50;
-        }
-
-        h2 {
-            color: #2980b9;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        h3 {
-            color: #3498db;
-        }
-
-        ul,
-        ol {
-            margin-left: 20px;
-        }
-
-        li {
-            margin: 5px 0;
-        }
-
-        p.example {
-            margin-left: 40px;
-            font-style: italic;
-            color: #555;
-        }
-
-        table {
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
         .menu {
             list-style: none;
             padding: 0;
         }
-
         .container {
             max-width: 800px;
             margin: 50px auto;
             text-align: center;
         }
-
         .menu li {
             margin: 15px 0;
         }
-
         .menu a {
             text-decoration: none;
             color: #fff;
@@ -129,13 +64,21 @@
             display: inline-block;
             transition: background-color 0.3s;
         }
-
         .menu a:hover {
             background-color: #3498db;
         }
+        #searchBar {
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -144,207 +87,420 @@
             </ul>
         </div>
     </header>
-    <h1>French Basic Verbs</h1>
-
+    <h1>French Basic Verbs - Two Days Notes</h1>
+    <input type="text" id="searchBar" placeholder="Search English or French..." onkeyup="searchTables()">
     <h2>Common Verbs with Pronouns</h2>
-    <p>Conjugations in the present tense for -er, -ir, and irregular verbs.</p>
+    <p>Conjugations primarily in the present tense, with examples for each pronoun.</p>
 
-    <h3>Parler (to speak) - Regular -er Verb</h3>
-    <table>
-        <tr>
-            <th>Pronoun</th>
-            <th>Conjugation</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>Je</td>
-            <td>parle</td>
-            <td>Je parle français. (I speak French.)</td>
-        </tr>
-        <tr>
-            <td>Tu</td>
-            <td>parles</td>
-            <td>Tu parles vite. (You speak fast.)</td>
-        </tr>
-        <tr>
-            <td>Il/Elle/On</td>
-            <td>parle</td>
-            <td>Elle parle anglais. (She speaks English.)</td>
-        </tr>
-        <tr>
-            <td>Nous</td>
-            <td>parlons</td>
-            <td>Nous parlons ensemble. (We speak together.)</td>
-        </tr>
-        <tr>
-            <td>Vous</td>
-            <td>parlez</td>
-            <td>Vous parlez bien. (You speak well.)</td>
-        </tr>
-        <tr>
-            <td>Ils/Elles</td>
-            <td>parlent</td>
-            <td>Ils parlent fort. (They speak loudly.)</td>
-        </tr>
-    </table>
+    <div id="verbTables">
+        <h3>Adorer (to love) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>j’adore</td><td>J’adore le chocolat. (I love chocolate.)</td></tr>
+            <tr><td>Tu</td><td>tu adores</td><td>Tu adores danser. (You love to dance.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on adore</td><td>Elle adore les fleurs. (She loves flowers.)</td></tr>
+            <tr><td>Nous</td><td>nous adorons</td><td>Nous adorons voyager. (We love to travel.)</td></tr>
+            <tr><td>Vous</td><td>vous adorez</td><td>Vous adorez la musique. (You love music.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles adorent</td><td>Ils adorent jouer. (They love to play.)</td></tr>
+        </table>
 
-    <h3>Manger (to eat) - Regular -er Verb with Stem Change</h3>
-    <p>Note: Verbs like "manger" add an extra "e" before "ons" for pronunciation.</p>
-    <table>
-        <tr>
-            <th>Pronoun</th>
-            <th>Conjugation</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>Je</td>
-            <td>mange</td>
-            <td>Je mange une pomme. (I eat an apple.)</td>
-        </tr>
-        <tr>
-            <td>Tu</td>
-            <td>manges</td>
-            <td>Tu manges vite. (You eat quickly.)</td>
-        </tr>
-        <tr>
-            <td>Il/Elle/On</td>
-            <td>mange</td>
-            <td>Il mange du pain. (He eats bread.)</td>
-        </tr>
-        <tr>
-            <td>Nous</td>
-            <td>mangeons</td>
-            <td>Nous mangeons dehors. (We eat outside.)</td>
-        </tr>
-        <tr>
-            <td>Vous</td>
-            <td>mangez</td>
-            <td>Vous mangez bien. (You eat well.)</td>
-        </tr>
-        <tr>
-            <td>Ils/Elles</td>
-            <td>mangent</td>
-            <td>Elles mangent des fruits. (They eat fruit.)</td>
-        </tr>
-    </table>
+        <h3>Aimer (to love/like) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>j’aime</td><td>J’aime lire. (I like to read.)</td></tr>
+            <tr><td>Tu</td><td>tu aimes</td><td>Tu aimes nager. (You like to swim.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on aime</td><td>Il aime courir. (He likes to run.)</td></tr>
+            <tr><td>Nous</td><td>nous aimons</td><td>Nous aimons manger. (We like to eat.)</td></tr>
+            <tr><td>Vous</td><td>vous aimez</td><td>Vous aimez chanter. (You like to sing.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles aiment</td><td>Elles aiment danser. (They like to dance.)</td></tr>
+        </table>
 
-    <h3>Finir (to finish) - Regular -ir Verb</h3>
-    <table>
-        <tr>
-            <th>Pronoun</th>
-            <th>Conjugation</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>Je</td>
-            <td>finis</td>
-            <td>Je finis mon travail. (I finish my work.)</td>
-        </tr>
-        <tr>
-            <td>Tu</td>
-            <td>finis</td>
-            <td>Tu finis tôt. (You finish early.)</td>
-        </tr>
-        <tr>
-            <td>Il/Elle/On</td>
-            <td>finit</td>
-            <td>Elle finit son livre. (She finishes her book.)</td>
-        </tr>
-        <tr>
-            <td>Nous</td>
-            <td>finissons</td>
-            <td>Nous finissons maintenant. (We finish now.)</td>
-        </tr>
-        <tr>
-            <td>Vous</td>
-            <td>finissez</td>
-            <td>Vous finissez vite. (You finish quickly.)</td>
-        </tr>
-        <tr>
-            <td>Ils/Elles</td>
-            <td>finissent</td>
-            <td>Ils finissent ensemble. (They finish together.)</td>
-        </tr>
-    </table>
+        <h3>Aller (to go/will) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je vais</td><td>Je vais au marché. (I go to the market.)</td></tr>
+            <tr><td>Tu</td><td>tu vas</td><td>Tu vas à l’école. (You go to school.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on va</td><td>Elle va au parc. (She goes to the park.)</td></tr>
+            <tr><td>Nous</td><td>nous allons</td><td>Nous allons au cinéma. (We go to the cinema.)</td></tr>
+            <tr><td>Vous</td><td>vous allez</td><td>Vous allez en ville. (You go to town.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles vont</td><td>Ils vont à la plage. (They go to the beach.)</td></tr>
+        </table>
 
-    <h3>Être (to be) - Irregular Verb</h3>
-    <table>
-        <tr>
-            <th>Pronoun</th>
-            <th>Conjugation</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>Je</td>
-            <td>suis</td>
-            <td>Je suis fatigué. (I am tired.)</td>
-        </tr>
-        <tr>
-            <td>Tu</td>
-            <td>es</td>
-            <td>Tu es gentil. (You are nice.)</td>
-        </tr>
-        <tr>
-            <td>Il/Elle/On</td>
-            <td>est</td>
-            <td>Il est grand. (He is tall.)</td>
-        </tr>
-        <tr>
-            <td>Nous</td>
-            <td>sommes</td>
-            <td>Nous sommes ici. (We are here.)</td>
-        </tr>
-        <tr>
-            <td>Vous</td>
-            <td>êtes</td>
-            <td>Vous êtes prêts. (You are ready.)</td>
-        </tr>
-        <tr>
-            <td>Ils/Elles</td>
-            <td>sont</td>
-            <td>Ils sont contents. (They are happy.)</td>
-        </tr>
-    </table>
+        <h3>Améliorer (to improve) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>j’améliore</td><td>J’améliore mon français. (I improve my French.)</td></tr>
+            <tr><td>Tu</td><td>tu améliores</td><td>Tu améliores ta cuisine. (You improve your cooking.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on améliore</td><td>Il améliore son travail. (He improves his work.)</td></tr>
+            <tr><td>Nous</td><td>nous améliorons</td><td>Nous améliorons notre maison. (We improve our house.)</td></tr>
+            <tr><td>Vous</td><td>vous améliorez</td><td>Vous améliorez vos notes. (You improve your grades.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles améliorent</td><td>Ils améliorent leur jeu. (They improve their game.)</td></tr>
+        </table>
 
-    <h3>Avoir (to have) - Irregular Verb</h3>
-    <table>
-        <tr>
-            <th>Pronoun</th>
-            <th>Conjugation</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>J’</td>
-            <td>ai</td>
-            <td>J’ai un chien. (I have a dog.)</td>
-        </tr>
-        <tr>
-            <td>Tu</td>
-            <td>as</td>
-            <td>Tu as un livre. (You have a book.)</td>
-        </tr>
-        <tr>
-            <td>Il/Elle/On</td>
-            <td>a</td>
-            <td>Elle a une voiture. (She has a car.)</td>
-        </tr>
-        <tr>
-            <td>Nous</td>
-            <td>avons</td>
-            <td>Nous avons du temps. (We have time.)</td>
-        </tr>
-        <tr>
-            <td>Vous</td>
-            <td>avez</td>
-            <td>Vous avez raison. (You have reason/are right.)</td>
-        </tr>
-        <tr>
-            <td>Ils/Elles</td>
-            <td>ont</td>
-            <td>Ils ont des amis. (They have friends.)</td>
-        </tr>
-    </table>
+        <h3>Apprécier (to enjoy/appreciate) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>j’apprécie</td><td>J’apprécie ton aide. (I appreciate your help.)</td></tr>
+            <tr><td>Tu</td><td>tu apprécies</td><td>Tu apprécies le film. (You enjoy the movie.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on apprécie</td><td>Elle apprécie la musique. (She enjoys the music.)</td></tr>
+            <tr><td>Nous</td><td>nous apprécions</td><td>Nous apprécions le repas. (We enjoy the meal.)</td></tr>
+            <tr><td>Vous</td><td>vous appréciez</td><td>Vous appréciez le vin. (You appreciate the wine.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles apprécient</td><td>Ils apprécient l’art. (They enjoy art.)</td></tr>
+        </table>
 
+        <h3>Avoir (to have) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>J’</td><td>j’ai</td><td>J’ai un chien. (I have a dog.)</td></tr>
+            <tr><td>Tu</td><td>tu as</td><td>Tu as un livre. (You have a book.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on a</td><td>Elle a une voiture. (She has a car.)</td></tr>
+            <tr><td>Nous</td><td>nous avons</td><td>Nous avons du temps. (We have time.)</td></tr>
+            <tr><td>Vous</td><td>vous avez</td><td>Vous avez raison. (You are right.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles ont</td><td>Ils ont des amis. (They have friends.)</td></tr>
+        </table>
+
+        <h3>Brosser (to brush) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je brosse</td><td>Je brosse mes cheveux. (I brush my hair.)</td></tr>
+            <tr><td>Tu</td><td>tu brosses</td><td>Tu brosses tes dents. (You brush your teeth.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on brosse</td><td>Il brosse son chien. (He brushes his dog.)</td></tr>
+            <tr><td>Nous</td><td>nous brossons</td><td>Nous brossons la table. (We brush the table.)</td></tr>
+            <tr><td>Vous</td><td>vous brossez</td><td>Vous brossez vos chaussures. (You brush your shoes.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles brossent</td><td>Elles brossent leurs chats. (They brush their cats.)</td></tr>
+        </table>
+
+        <h3>Commencer (to start/begin) - Regular -er Verb with Stem Change</h3>
+        <p>Note: Verbs like "commencer" add a "ç" before "ons" for pronunciation.</p>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je commence</td><td>Je commence à travailler. (I start to work.)</td></tr>
+            <tr><td>Tu</td><td>tu commences</td><td>Tu commences tôt. (You start early.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on commence</td><td>Elle commence un livre. (She starts a book.)</td></tr>
+            <tr><td>Nous</td><td>nous commençons</td><td>Nous commençons maintenant. (We start now.)</td></tr>
+            <tr><td>Vous</td><td>vous commencez</td><td>Vous commencez l’école. (You start school.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles commencent</td><td>Ils commencent à jouer. (They start to play.)</td></tr>
+        </table>
+
+        <h3>Connaitre (to know) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je connais</td><td>Je connais Paris. (I know Paris.)</td></tr>
+            <tr><td>Tu</td><td>tu connais</td><td>Tu connais Marie. (You know Marie.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on connaît</td><td>Il connaît le chemin. (He knows the way.)</td></tr>
+            <tr><td>Nous</td><td>nous connaissons</td><td>Nous connaissons la ville. (We know the city.)</td></tr>
+            <tr><td>Vous</td><td>vous connaissez</td><td>Vous connaissez ce livre. (You know this book.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles connaissent</td><td>Ils connaissent les règles. (They know the rules.)</td></tr>
+        </table>
+
+        <h3>Décrire (to describe) - Regular -ir Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je décris</td><td>Je décris ma maison. (I describe my house.)</td></tr>
+            <tr><td>Tu</td><td>tu décris</td><td>Tu décris ton ami. (You describe your friend.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on décrit</td><td>Elle décrit un tableau. (She describes a painting.)</td></tr>
+            <tr><td>Nous</td><td>nous décrivons</td><td>Nous décrivons le paysage. (We describe the landscape.)</td></tr>
+            <tr><td>Vous</td><td>vous décrivez</td><td>Vous décrivez vos vacances. (You describe your vacation.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles décrivent</td><td>Ils décrivent leur journée. (They describe their day.)</td></tr>
+        </table>
+
+        <h3>Déjeuner (to have lunch) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je déjeune</td><td>Je déjeune à midi. (I have lunch at noon.)</td></tr>
+            <tr><td>Tu</td><td>tu déjeunes</td><td>Tu déjeunes avec moi. (You have lunch with me.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on déjeune</td><td>Il déjeune dehors. (He has lunch outside.)</td></tr>
+            <tr><td>Nous</td><td>nous déjeunons</td><td>Nous déjeunons ensemble. (We have lunch together.)</td></tr>
+            <tr><td>Vous</td><td>vous déjeunez</td><td>Vous déjeunez au restaurant. (You have lunch at the restaurant.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles déjeunent</td><td>Ils déjeunent tard. (They have lunch late.)</td></tr>
+        </table>
+
+        <h3>Dîner (to have dinner) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je dîne</td><td>Je dîne à huit heures. (I have dinner at eight.)</td></tr>
+            <tr><td>Tu</td><td>tu dînes</td><td>Tu dînes avec amis. (You have dinner with friends.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on dîne</td><td>Elle dîne seule. (She has dinner alone.)</td></tr>
+            <tr><td>Nous</td><td>nous dînons</td><td>Nous dînons en famille. (We have dinner as a family.)</td></tr>
+            <tr><td>Vous</td><td>vous dînez</td><td>Vous dînez au restaurant. (You have dinner at the restaurant.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles dînent</td><td>Ils dînent tôt. (They have dinner early.)</td></tr>
+        </table>
+
+        <h3>Dormir (to sleep) - Regular -ir Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je dors</td><td>Je dors bien. (I sleep well.)</td></tr>
+            <tr><td>Tu</td><td>tu dors</td><td>Tu dors tard. (You sleep late.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on dort</td><td>Il dort profondément. (He sleeps deeply.)</td></tr>
+            <tr><td>Nous</td><td>nous dormons</td><td>Nous dormons ensemble. (We sleep together.)</td></tr>
+            <tr><td>Vous</td><td>vous dormez</td><td>Vous dormez peu. (You sleep little.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles dorment</td><td>Ils dorment dehors. (They sleep outside.)</td></tr>
+        </table>
+
+        <h3>Écouter (to listen) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>j’écoute</td><td>J’écoute la radio. (I listen to the radio.)</td></tr>
+            <tr><td>Tu</td><td>tu écoutes</td><td>Tu écoutes de la musique. (You listen to music.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on écoute</td><td>Elle écoute un podcast. (She listens to a podcast.)</td></tr>
+            <tr><td>Nous</td><td>nous écoutons</td><td>Nous écoutons le professeur. (We listen to the teacher.)</td></tr>
+            <tr><td>Vous</td><td>vous écoutez</td><td>Vous écoutez les nouvelles. (You listen to the news.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles écoutent</td><td>Ils écoutent attentivement. (They listen carefully.)</td></tr>
+        </table>
+
+        <h3>Être (to be) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je suis</td><td>Je suis fatigué. (I am tired.)</td></tr>
+            <tr><td>Tu</td><td>tu es</td><td>Tu es gentil. (You are nice.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on est</td><td>Il est grand. (He is tall.)</td></tr>
+            <tr><td>Nous</td><td>nous sommes</td><td>Nous sommes ici. (We are here.)</td></tr>
+            <tr><td>Vous</td><td>vous êtes</td><td>Vous êtes prêts. (You are ready.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles sont</td><td>Ils sont contents. (They are happy.)</td></tr>
+        </table>
+
+        <h3>Exister (to exist) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>j’existe</td><td>J’existe dans ce monde. (I exist in this world.)</td></tr>
+            <tr><td>Tu</td><td>tu existes</td><td>Tu existes pour moi. (You exist for me.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on existe</td><td>Il existe une solution. (There exists a solution.)</td></tr>
+            <tr><td>Nous</td><td>nous existons</td><td>Nous existons ensemble. (We exist together.)</td></tr>
+            <tr><td>Vous</td><td>vous existez</td><td>Vous existez dans mes rêves. (You exist in my dreams.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles existent</td><td>Ils existent encore. (They still exist.)</td></tr>
+        </table>
+
+        <h3>Faire (to make/do/take) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je fais</td><td>Je fais mes devoirs. (I do my homework.)</td></tr>
+            <tr><td>Tu</td><td>tu fais</td><td>Tu fais un gâteau. (You make a cake.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on fait</td><td>Il fait du sport. (He does sports.)</td></tr>
+            <tr><td>Nous</td><td>nous faisons</td><td>Nous faisons la cuisine. (We cook.)</td></tr>
+            <tr><td>Vous</td><td>vous faites</td><td>Vous faites une promenade. (You take a walk.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles font</td><td>Ils font du bruit. (They make noise.)</td></tr>
+        </table>
+
+        <h3>Falloir (to have to/need to) - Irregular Verb</h3>
+        <p>Note: "Falloir" is impersonal and only used in the third person singular.</p>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Il</td><td>il faut</td><td>Il faut partir. (We/You/They need to leave.)</td></tr>
+        </table>
+
+        <h3>Laver (to wash) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je lave</td><td>Je lave la voiture. (I wash the car.)</td></tr>
+            <tr><td>Tu</td><td>tu laves</td><td>Tu laves les assiettes. (You wash the dishes.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on lave</td><td>Elle lave ses vêtements. (She washes her clothes.)</td></tr>
+            <tr><td>Nous</td><td>nous lavons</td><td>Nous lavons le sol. (We wash the floor.)</td></tr>
+            <tr><td>Vous</td><td>vous lavez</td><td>Vous lavez vos mains. (You wash your hands.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles lavent</td><td>Ils lavent le chien. (They wash the dog.)</td></tr>
+        </table>
+
+        <h3>Lever (to rise/remove) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je lève</td><td>Je lève tôt. (I rise early.)</td></tr>
+            <tr><td>Tu</td><td>tu lèves</td><td>Tu lèves la main. (You raise your hand.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on lève</td><td>Il lève les yeux. (He looks up.)</td></tr>
+            <tr><td>Nous</td><td>nous levons</td><td>Nous levons le drapeau. (We raise the flag.)</td></tr>
+            <tr><td>Vous</td><td>vous levez</td><td>Vous levez vos verres. (You raise your glasses.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles lèvent</td><td>Ils lèvent la table. (They remove the table.)</td></tr>
+        </table>
+
+        <h3>Montrer (to show) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je montre</td><td>Je montre mon dessin. (I show my drawing.)</td></tr>
+            <tr><td>Tu</td><td>tu montres</td><td>Tu montres ta photo. (You show your photo.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on montre</td><td>Elle montre son livre. (She shows her book.)</td></tr>
+            <tr><td>Nous</td><td>nous montrons</td><td>Nous montrons le chemin. (We show the way.)</td></tr>
+            <tr><td>Vous</td><td>vous montrez</td><td>Vous montrez vos talents. (You show your talents.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles montrent</td><td>Ils montrent leurs œuvres. (They show their works.)</td></tr>
+        </table>
+
+        <h3>Nager (to swim) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je nage</td><td>Je nage dans la piscine. (I swim in the pool.)</td></tr>
+            <tr><td>Tu</td><td>tu nages</td><td>Tu nages bien. (You swim well.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on nage</td><td>Il nage dans la mer. (He swims in the sea.)</td></tr>
+            <tr><td>Nous</td><td>nous nageons</td><td>Nous nageons ensemble. (We swim together.)</td></tr>
+            <tr><td>Vous</td><td>vous nagez</td><td>Vous nagez vite. (You swim fast.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles nagent</td><td>Ils nagent dans le lac. (They swim in the lake.)</td></tr>
+        </table>
+
+        <h3>Partir (to leave/go) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je pars</td><td>Je pars en vacances. (I leave for vacation.)</td></tr>
+            <tr><td>Tu</td><td>tu pars</td><td>Tu pars ce soir. (You leave tonight.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on part</td><td>Elle part au travail. (She goes to work.)</td></tr>
+            <tr><td>Nous</td><td>nous partons</td><td>Nous partons demain. (We leave tomorrow.)</td></tr>
+            <tr><td>Vous</td><td>vous partez</td><td>Vous partez en France. (You go to France.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles partent</td><td>Ils partent tôt. (They leave early.)</td></tr>
+        </table>
+
+        <h3>Passer (to spend/pass/go) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je passe</td><td>Je passe du temps ici. (I spend time here.)</td></tr>
+            <tr><td>Tu</td><td>tu passes</td><td>Tu passes devant la maison. (You pass by the house.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on passe</td><td>Il passe un examen. (He takes an exam.)</td></tr>
+            <tr><td>Nous</td><td>nous passons</td><td>Nous passons la journée ensemble. (We spend the day together.)</td></tr>
+            <tr><td>Vous</td><td>vous passez</td><td>Vous passez par le parc. (You go through the park.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles passent</td><td>Ils passent devant l’école. (They pass by the school.)</td></tr>
+        </table>
+
+        <h3>Pouvoir (to can) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je peux</td><td>Je peux aider. (I can help.)</td></tr>
+            <tr><td>Tu</td><td>tu peux</td><td>Tu peux venir. (You can come.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on peut</td><td>Elle peut chanter. (She can sing.)</td></tr>
+            <tr><td>Nous</td><td>nous pouvons</td><td>Nous pouvons jouer. (We can play.)</td></tr>
+            <tr><td>Vous</td><td>vous pouvez</td><td>Vous pouvez parler. (You can speak.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles peuvent</td><td>Ils peuvent danser. (They can dance.)</td></tr>
+        </table>
+
+        <h3>Prendre (to take/grab/pick up) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je prends</td><td>Je prends le bus. (I take the bus.)</td></tr>
+            <tr><td>Tu</td><td>tu prends</td><td>Tu prends un café. (You take a coffee.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on prend</td><td>Il prend son sac. (He grabs his bag.)</td></tr>
+            <tr><td>Nous</td><td>nous prenons</td><td>Nous prenons le train. (We take the train.)</td></tr>
+            <tr><td>Vous</td><td>vous prenez</td><td>Vous prenez vos livres. (You pick up your books.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles prennent</td><td>Ils prennent des photos. (They take photos.)</td></tr>
+        </table>
+
+        <h3>Proposer (to offer/provide) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je propose</td><td>Je propose une idée. (I offer an idea.)</td></tr>
+            <tr><td>Tu</td><td>tu proposes</td><td>Tu proposes un plan. (You propose a plan.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on propose</td><td>Elle propose un jeu. (She offers a game.)</td></tr>
+            <tr><td>Nous</td><td>nous proposons</td><td>Nous proposons une solution. (We provide a solution.)</td></tr>
+            <tr><td>Vous</td><td>vous proposez</td><td>Vous proposez un cadeau. (You offer a gift.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles proposent</td><td>Ils proposent une sortie. (They propose an outing.)</td></tr>
+        </table>
+
+        <h3>Remplir (to fill out/complete) - Regular -ir Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je remplis</td><td>Je remplis un formulaire. (I fill out a form.)</td></tr>
+            <tr><td>Tu</td><td>tu remplis</td><td>Tu remplis le verre. (You fill the glass.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on remplit</td><td>Il remplit sa tasse. (He fills his cup.)</td></tr>
+            <tr><td>Nous</td><td>nous remplissons</td><td>Nous remplissons la boîte. (We fill the box.)</td></tr>
+            <tr><td>Vous</td><td>vous remplissez</td><td>Vous remplissez les fiches. (You complete the sheets.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles remplissent</td><td>Ils remplissent le seau. (They fill the bucket.)</td></tr>
+        </table>
+
+        <h3>Rentrer (to return/get back) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je rentre</td><td>Je rentre à la maison. (I return home.)</td></tr>
+            <tr><td>Tu</td><td>tu rentres</td><td>Tu rentres tard. (You get back late.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on rentre</td><td>Elle rentre du travail. (She returns from work.)</td></tr>
+            <tr><td>Nous</td><td>nous rentrons</td><td>Nous rentrons ensemble. (We get back together.)</td></tr>
+            <tr><td>Vous</td><td>vous rentrez</td><td>Vous rentrez ce soir. (You return tonight.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles rentrent</td><td>Ils rentrent de l’école. (They get back from school.)</td></tr>
+        </table>
+
+        <h3>Revenir (to come back/return) - Irregular Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je reviens</td><td>Je reviens bientôt. (I come back soon.)</td></tr>
+            <tr><td>Tu</td><td>tu reviens</td><td>Tu reviens demain. (You come back tomorrow.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on revient</td><td>Il revient de Paris. (He returns from Paris.)</td></tr>
+            <tr><td>Nous</td><td>nous revenons</td><td>Nous revenons ce soir. (We come back tonight.)</td></tr>
+            <tr><td>Vous</td><td>vous revenez</td><td>Vous revenez du marché. (You return from the market.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles reviennent</td><td>Ils reviennent ensemble. (They come back together.)</td></tr>
+        </table>
+
+        <h3>Réveiller (to wake up) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je réveille</td><td>Je réveille mon frère. (I wake up my brother.)</td></tr>
+            <tr><td>Tu</td><td>tu réveilles</td><td>Tu réveilles les enfants. (You wake up the kids.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on réveille</td><td>Elle réveille son chien. (She wakes up her dog.)</td></tr>
+            <tr><td>Nous</td><td>nous réveillons</td><td>Nous réveillons la maison. (We wake up the house.)</td></tr>
+            <tr><td>Vous</td><td>vous réveillez</td><td>Vous réveillez vos amis. (You wake up your friends.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles réveillent</td><td>Ils réveillent tout le monde. (They wake up everyone.)</td></tr>
+        </table>
+
+        <h3>Souhaiter (to wish) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je souhaite</td><td>Je souhaite bonne chance. (I wish good luck.)</td></tr>
+            <tr><td>Tu</td><td>tu souhaites</td><td>Tu souhaites du bonheur. (You wish happiness.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on souhaite</td><td>Elle souhaite la paix. (She wishes for peace.)</td></tr>
+            <tr><td>Nous</td><td>nous souhaitons</td><td>Nous souhaitons réussir. (We wish to succeed.)</td></tr>
+            <tr><td>Vous</td><td>vous souhaitez</td><td>Vous souhaitez un bon voyage. (You wish a good trip.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles souhaitent</td><td>Ils souhaitent la santé. (They wish for health.)</td></tr>
+        </table>
+
+        <h3>Trouver (to find) - Regular -er Verb</h3>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je trouve</td><td>Je trouve mon livre. (I find my book.)</td></tr>
+            <tr><td>Tu</td><td>tu trouves</td><td>Tu trouves la clé. (You find the key.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on trouve</td><td>Il trouve une solution. (He finds a solution.)</td></tr>
+            <tr><td>Nous</td><td>nous trouvons</td><td>Nous trouvons le chemin. (We find the way.)</td></tr>
+            <tr><td>Vous</td><td>vous trouvez</td><td>Vous trouvez vos lunettes. (You find your glasses.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles trouvent</td><td>Ils trouvent des trésors. (They find treasures.)</td></tr>
+        </table>
+
+        <h3>Vouloir (to would like/want to) - Irregular Verb (Conditional Tense)</h3>
+        <p>Note: "Vouloir" is shown in the conditional tense as per "voudrais" usage.</p>
+        <table>
+            <tr><th>Pronoun</th><th>Conjugation</th><th>Example</th></tr>
+            <tr><td>Je</td><td>je voudrais</td><td>Je voudrais un café. (I would like a coffee.)</td></tr>
+            <tr><td>Tu</td><td>tu voudrais</td><td>Tu voudrais manger. (You would like to eat.)</td></tr>
+            <tr><td>Il/Elle/On</td><td>il/elle/on voudrait</td><td>Elle voudrait partir. (She would like to leave.)</td></tr>
+            <tr><td>Nous</td><td>nous voudrions</td><td>Nous voudrions voyager. (We would like to travel.)</td></tr>
+            <tr><td>Vous</td><td>vous voudriez</td><td>Vous voudriez danser. (You would like to dance.)</td></tr>
+            <tr><td>Ils/Elles</td><td>ils/elles voudraient</td><td>Ils voudraient jouer. (They would like to play.)</td></tr>
+        </table>
+    </div>
+
+    <script>
+        function searchTables() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let tables = document.querySelectorAll("#verbTables table");
+            let headers = document.querySelectorAll("#verbTables h3");
+
+            for (let i = 0; i < tables.length; i++) {
+                let rows = tables[i].getElementsByTagName("tr");
+                let header = headers[i];
+                let hasMatch = false;
+
+                for (let j = 1; j < rows.length; j++) { // Skip header row
+                    let cells = rows[j].getElementsByTagName("td");
+                    let pronoun = cells[0].textContent.toLowerCase();
+                    let conjugation = cells[1].textContent.toLowerCase();
+                    let example = cells[2].textContent.toLowerCase();
+                    let english = header.textContent.split(" (")[1].split(")")[0].toLowerCase();
+
+                    if (pronoun.includes(input) || conjugation.includes(input) || example.includes(input) || english.includes(input)) {
+                        rows[j].classList.remove("hidden");
+                        hasMatch = true;
+                    } else {
+                        rows[j].classList.add("hidden");
+                    }
+                }
+
+                if (hasMatch || header.textContent.toLowerCase().includes(input)) {
+                    tables[i].classList.remove("hidden");
+                    header.classList.remove("hidden");
+                } else {
+                    tables[i].classList.add("hidden");
+                    header.classList.add("hidden");
+                }
+            }
+        }
+    </script>
 </body>
-
 </html>

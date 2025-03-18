@@ -1,0 +1,223 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>French Vocabulary - Daily Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #2980b9; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        h3 { color: #3498db; }
+        ul, ol { margin-left: 20px; }
+        li { margin: 5px 0; }
+        p.example { margin-left: 40px; font-style: italic; color: #555; }
+        table { border-collapse: collapse; margin: 10px 0; width: 80%; margin: 20px auto; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .menu li {
+            margin: 15px 0;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #2980b9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover {
+            background-color: #3498db;
+        }
+        .verb { color: #2c3e50; }
+        .noun { color: #e74c3c; }
+        .adverb { color: #8e44ad; }
+        .preposition { color: #16a085; }
+        .pronoun { color: #d35400; }
+        .adjective { color: #2980b9; }
+        .conjunction { color: #7f8c8d; }
+        .type-header { background-color: #dcdcdc; font-weight: bold; }
+        #searchBar { width: 50%; margin: 20px auto; padding: 10px; font-size: 16px; display: block; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+            </ul>
+        </div>
+    </header>
+    <h1>French Vocabulary - Daily Notes</h1>
+    <input type="text" id="searchBar" placeholder="Search English or French..." onkeyup="searchTable()">
+    <table id="vocabTable">
+        <tr>
+            <th>English</th>
+            <th>French</th>
+        </tr>
+        <!-- Verbs -->
+        <tr class="type-row"><td colspan="2" class="type-header">Verbs</td></tr>
+        <tr class="data-row"><td>improve</td><td class="verb">améliorer:<br>j’améliore<br>tu améliores<br>il/elle/on améliore<br>nous améliorons<br>vous améliorez<br>ils/elles améliorent</td></tr>
+        <tr class="data-row"><td>have/are/got</td><td class="verb">avoir:<br>j’ai<br>tu as<br>il/elle/on a<br>nous avons<br>vous avez<br>ils/elles ont</td></tr>
+        <tr class="data-row"><td>be</td><td class="verb">être:<br>je suis<br>tu es<br>il/elle/on est<br>nous sommes<br>vous êtes<br>ils/elles sont</td></tr>
+        <tr class="data-row"><td>come back/return</td><td class="verb">revenir:<br>je reviens<br>tu reviens<br>il/elle/on revient<br>nous revenons<br>vous revenez<br>ils/elles reviennent</td></tr>
+        <tr class="data-row"><td>know</td><td class="verb">connaitre:<br>je connais<br>tu connais<br>il/elle/on connaît<br>nous connaissons<br>vous connaissez<br>ils/elles connaissent</td></tr>
+        <tr class="data-row"><td>describe</td><td class="verb">décrire:<br>je décris<br>tu décris<br>il/elle/on décrit<br>nous décrivons<br>vous décrivez<br>ils/elles décrivent</td></tr>
+        <tr class="data-row"><td>exists</td><td class="verb">exister:<br>j’existe<br>tu existes<br>il/elle/on existe<br>nous existons<br>vous existez<br>ils/elles existent</td></tr>
+        <tr class="data-row"><td>fill out/complete</td><td class="verb">remplir:<br>je remplis<br>tu remplis<br>il/elle/on remplit<br>nous remplissons<br>vous remplissez<br>ils/elles remplissent</td></tr>
+        <tr class="data-row"><td>have to/need to/need</td><td class="verb">falloir:<br>il faut (only 3rd person singular used)</td></tr>
+        <tr class="data-row"><td>love/like</td><td class="verb">aimer:<br>j’aime<br>tu aimes<br>il/elle/on aime<br>nous aimons<br>vous aimez<br>ils/elles aiment</td></tr>
+        <tr class="data-row"><td>enjoyed/appreciated</td><td class="verb">apprécier:<br>j’apprécie<br>tu apprécies<br>il/elle/on apprécie<br>nous apprécions<br>vous appréciez<br>ils/elles apprécient</td></tr>
+        <tr class="data-row"><td>leave/go</td><td class="verb">partir:<br>je pars<br>tu pars<br>il/elle/on part<br>nous partons<br>vous partez<br>ils/elles partent</td></tr>
+        <tr class="data-row"><td>can</td><td class="verb">pouvoir:<br>je peux<br>tu peux<br>il/elle/on peut<br>nous pouvons<br>vous pouvez<br>ils/elles peuvent</td></tr>
+        <tr class="data-row"><td>offer/provide</td><td class="verb">proposer:<br>je propose<br>tu proposes<br>il/elle/on propose<br>nous proposons<br>vous proposez<br>ils/elles proposent</td></tr>
+        <tr class="data-row"><td>wake up</td><td class="verb">réveiller:<br>je réveille<br>tu réveilles<br>il/elle/on réveille<br>nous réveillons<br>vous réveillez<br>ils/elles réveillent</td></tr>
+        <tr class="data-row"><td>show</td><td class="verb">montrer:<br>je montre<br>tu montres<br>il/elle/on montre<br>nous montrons<br>vous montrez<br>ils/elles montrent</td></tr>
+        <tr class="data-row"><td>would like/want to</td><td class="verb">vouloir:<br>je voudrais<br>tu voudrais<br>il/elle/on voudrait<br>nous voudrions<br>vous voudriez<br>ils/elles voudraient</td></tr>
+        <!-- Nouns -->
+        <tr class="type-row"><td colspan="2" class="type-header">Nouns</td></tr>
+        <tr class="data-row"><td>bill/addition</td><td class="noun">addition</td></tr>
+        <tr class="data-row"><td>checkout</td><td class="noun">caisse</td></tr>
+        <tr class="data-row"><td>card/map/menu</td><td class="noun">carte</td></tr>
+        <tr class="data-row"><td>carafe/pitcher</td><td class="noun">carafe</td></tr>
+        <tr class="data-row"><td>shirt</td><td class="noun">chemise</td></tr>
+        <tr class="data-row"><td>goat</td><td class="noun">chèvre</td></tr>
+        <tr class="data-row"><td>thing</td><td class="noun">chose</td></tr>
+        <tr class="data-row"><td>key</td><td class="noun">clef</td></tr>
+        <tr class="data-row"><td>cotton</td><td class="noun">coton</td></tr>
+        <tr class="data-row"><td>earth/land</td><td class="noun">terre</td></tr>
+        <tr class="data-row"><td>sheet</td><td class="noun">fiche</td></tr>
+        <tr class="data-row"><td>flight</td><td class="noun">vol</td></tr>
+        <tr class="data-row"><td>fries</td><td class="noun">frites</td></tr>
+        <tr class="data-row"><td>glass</td><td class="noun">verre</td></tr>
+        <tr class="data-row"><td>grams</td><td class="noun">grammes</td></tr>
+        <tr class="data-row"><td>beans</td><td class="noun">haricots</td></tr>
+        <tr class="data-row"><td>sleeves</td><td class="noun">manches</td></tr>
+        <tr class="data-row"><td>long-sleeved</td><td class="noun">manches longues</td></tr>
+        <tr class="data-row"><td>short-sleeved</td><td class="noun">manches courtes</td></tr>
+        <tr class="data-row"><td>market</td><td class="noun">marché</td></tr>
+        <tr class="data-row"><td>fashion/mode</td><td class="noun">mode</td></tr>
+        <tr class="data-row"><td>currency/coin/money/change</td><td class="noun">monnaie</td></tr>
+        <tr class="data-row"><td>need</td><td class="noun">besoin</td></tr>
+        <tr class="data-row"><td>number</td><td class="noun">numéro</td></tr>
+        <tr class="data-row"><td>pea</td><td class="noun">petit pois</td></tr>
+        <tr class="data-row"><td>peas</td><td class="noun">pois</td></tr>
+        <tr class="data-row"><td>pond/book/paper</td><td class="noun">livre</td></tr>
+        <tr class="data-row"><td>potatoes</td><td class="noun">pommes de terre</td></tr>
+        <tr class="data-row"><td>reason/right/due</td><td class="noun">raison</td></tr>
+        <tr class="data-row"><td>meal/food</td><td class="noun">repas</td></tr>
+        <tr class="data-row"><td>information/intelligence</td><td class="noun">renseignements</td></tr>
+        <tr class="data-row"><td>return</td><td class="noun">retour</td></tr>
+        <tr class="data-row"><td>shower</td><td class="noun">douche</td></tr>
+        <tr class="data-row"><td>stopover/stop</td><td class="noun">escale</td></tr>
+        <tr class="data-row"><td>tart</td><td class="noun">tartelette</td></tr>
+        <!-- Adverbs -->
+        <tr class="type-row"><td colspan="2" class="type-header">Adverbs</td></tr>
+        <tr class="data-row"><td>so</td><td class="adverb">alors</td></tr>
+        <tr class="data-row"><td>enough/quite</td><td class="adverb">assez</td></tr>
+        <tr class="data-row"><td>hier</td><td class="adverb">yesterday</td></tr>
+        <tr class="data-row"><td>maybe/perhaps</td><td class="adverb">peut-être</td></tr>
+        <tr class="data-row"><td>only/just</td><td class="adverb">seulement</td></tr>
+        <tr class="data-row"><td>immediately/right away</td><td class="adverb">tout de suite</td></tr>
+        <!-- Prepositions -->
+        <tr class="type-row"><td colspan="2" class="type-header">Prepositions</td></tr>
+        <tr class="data-row"><td>including</td><td class="preposition">compris</td></tr>
+        <!-- Pronouns -->
+        <tr class="type-row"><td colspan="2" class="type-header">Pronouns</td></tr>
+        <tr class="data-row"><td>all/everything</td><td class="pronoun">tout</td></tr>
+        <tr class="data-row"><td>another/else</td><td class="pronoun">autre</td></tr>
+        <!-- Adjectives -->
+        <tr class="type-row"><td colspan="2" class="type-header">Adjectives</td></tr>
+        <tr class="data-row"><td>available</td><td class="adjective">disponible</td></tr>
+        <tr class="data-row"><td>light</td><td class="adjective">clair</td></tr>
+        <tr class="data-row"><td>light blue</td><td class="adjective">bleu clair</td></tr>
+        <tr class="data-row"><td>short</td><td class="adjective">court</td></tr>
+        <tr class="data-row"><td>expensive</td><td class="adjective">cher</td></tr>
+        <tr class="data-row"><td>cheaper/cheapest</td><td class="adjective">moins cher</td></tr>
+        <tr class="data-row"><td>dark</td><td class="adjective">foncé</td></tr>
+        <tr class="data-row"><td>dark green</td><td class="adjective">vert foncé</td></tr>
+        <tr class="data-row"><td>exchangeable</td><td class="adjective">échangeable</td></tr>
+        <tr class="data-row"><td>main/primary</td><td class="adjective">principal</td></tr>
+        <tr class="data-row"><td>ready/prepared</td><td class="adjective">prête</td></tr>
+        <tr class="data-row"><td>wonderful</td><td class="adjective">merveilleux</td></tr>
+        <!-- Conjunctions -->
+        <tr class="type-row"><td colspan="2" class="type-header">Conjunctions</td></tr>
+        <tr class="data-row"><td>but</td><td class="conjunction">mais</td></tr>
+        <tr class="data-row"><td>or/whether/be</td><td class="conjunction">soit</td></tr>
+        <!-- Phrases -->
+        <tr class="type-row"><td colspan="2" class="type-header">Phrases</td></tr>
+        <tr class="data-row"><td>it was</td><td class="verb">c’était</td></tr>
+        <tr class="data-row"><td>it’s quite cheap</td><td class="adjective">c’est assez bon marché</td></tr>
+        <tr class="data-row"><td>you are right</td><td class="noun">tu as raison</td></tr>
+        <tr class="data-row"><td>how many/how much/how</td><td class="pronoun">combien</td></tr>
+        <tr class="data-row"><td>give me</td><td class="verb">donnez-moi</td></tr>
+        <tr class="data-row"><td>what would you like?</td><td class="verb">que voudriez-vous</td></tr>
+        <tr class="data-row"><td>do you want to/would you like</td><td class="verb">voulez-vous</td></tr>
+        <tr class="data-row"><td>you’re welcome</td><td class="preposition">de rien</td></tr>
+    </table>
+
+    <script>
+        function searchTable() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let table = document.getElementById("vocabTable");
+            let rows = table.getElementsByClassName("data-row");
+            let typeRows = table.getElementsByClassName("type-row");
+
+            let visibleTypes = {
+                "Verbs": false,
+                "Nouns": false,
+                "Adverbs": false,
+                "Prepositions": false,
+                "Pronouns": false,
+                "Adjectives": false,
+                "Conjunctions": false,
+                "Phrases": false
+            };
+
+            for (let i = 0; i < rows.length; i++) {
+                let english = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+                let french = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+                
+                if (english.includes(input) || french.includes(input)) {
+                    rows[i].classList.remove("hidden");
+                    let type = getTypeFromRow(rows[i]);
+                    if (type) visibleTypes[type] = true;
+                } else {
+                    rows[i].classList.add("hidden");
+                }
+            }
+
+            for (let i = 0; i < typeRows.length; i++) {
+                let typeText = typeRows[i].getElementsByTagName("td")[0].textContent;
+                if (visibleTypes[typeText]) {
+                    typeRows[i].classList.remove("hidden");
+                } else {
+                    typeRows[i].classList.add("hidden");
+                }
+            }
+        }
+
+        function getTypeFromRow(row) {
+            let frenchCell = row.getElementsByTagName("td")[1];
+            if (frenchCell.classList.contains("verb")) return "Verbs";
+            if (frenchCell.classList.contains("noun")) return "Nouns";
+            if (frenchCell.classList.contains("adverb")) return "Adverbs";
+            if (frenchCell.classList.contains("preposition")) return "Prepositions";
+            if (frenchCell.classList.contains("pronoun")) return "Pronouns";
+            if (frenchCell.classList.contains("adjective")) return "Adjectives";
+            if (frenchCell.classList.contains("conjunction")) return "Conjunctions";
+            if (frenchCell.classList.contains("phrase")) return "Phrases";
+            return null;
+        }
+    </script>
+</body>
+</html>
