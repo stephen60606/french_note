@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Verb Conjugations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h3 { color: #555; }
+        table { border-collapse: collapse; margin: 20px 0; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        .play-btn { cursor: pointer; background: #95b6da; color: white; border: none; padding: 2px 6px; border-radius: 3px; margin: 0 2px; }
+        .conjugation-cell { display: flex; align-items: center; }
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .menu li {
+            margin: 15px 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #2980b9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #3498db;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+        </ul>
+    </div>
+    <div id="grammarSections"></div>
+    <script>
+        // Verb data grouped by type
+        const verbGroups = [
+            {
+                title: "Irregular -ER Verbs (-cer)",
+                endings: { je: 'e', tu: 'es', il: 'e', nous: 'ons', vous: 'ez', ils: 'ent' },
+                specialRule: (stem) => stem.endsWith('c') ? { nous: stem.slice(0, -1) + 'çons' } : {},
+                verbs: [
+                    { infinitive: "agacer", english: "To annoy" },
+                    { infinitive: "annoncer", english: "To announce" },
+                    { infinitive: "avancer", english: "To advance" },
+                    { infinitive: "balancer", english: "To sway / To swing" },
+                    { infinitive: "commencer", english: "To begin / To start" },
+                    { infinitive: "dénoncer", english: "To denounce" },
+                    { infinitive: "divorcer", english: "To divorce" },
+                    { infinitive: "effacer", english: "To erase / To delete" },
+                    { infinitive: "forcer", english: "To force" },
+                    { infinitive: "lancer", english: "To throw" },
+                    { infinitive: "menacer", english: "To threaten" },
+                    { infinitive: "placer", english: "To put" },
+                    { infinitive: "prononcer", english: "To pronounce" },
+                    { infinitive: "remplacer", english: "To replace" },
+                    { infinitive: "renoncer", english: "To renounce" },
+                    { infinitive: "sucer", english: "To suck" },
+                    { infinitive: "tracer", english: "To draw" }
+                ]
+            },
+            {
+                title: "Irregular -ER Verbs (-ger)",
+                endings: { je: 'e', tu: 'es', il: 'e', nous: 'ons', vous: 'ez', ils: 'ent' },
+                specialRule: (stem) => stem.endsWith('g') ? { nous: stem + 'eons' } : {},
+                verbs: [
+                    { infinitive: "aménager", english: "To furnish" },
+                    { infinitive: "arranger", english: "To arrange" },
+                    { infinitive: "bouger", english: "To move" },
+                    { infinitive: "changer", english: "To change" },
+                    { infinitive: "charger", english: "To charge / To load" },
+                    { infinitive: "corriger", english: "To correct" },
+                    { infinitive: "décourager", english: "To discourage" },
+                    { infinitive: "encourager", english: "To encourage" },
+                    { infinitive: "dégager", english: "To free" },
+                    { infinitive: "déménager", english: "To move" },
+                    { infinitive: "déranger", english: "To disturb" },
+                    { infinitive: "diriger", english: "To direct" },
+                    
+                    { infinitive: "engager", english: "To engage / To hire" },
+                    { infinitive: "envisager", english: "To plan" },
+                    { infinitive: "exiger", english: "To demand" },
+                    { infinitive: "interroger", english: "To interrogate / To question" },
+                    { infinitive: "juger", english: "To judge" },
+                    { infinitive: "loger", english: "To lodge" },
+                    { infinitive: "manger", english: "To eat" },
+                    { infinitive: "mélanger", english: "To mix" },
+                    { infinitive: "nager", english: "To swim" },
+                    { infinitive: "neiger", english: "To snow" },
+                    { infinitive: "obliger", english: "To force" },
+                    { infinitive: "partager", english: "To share" },
+                    { infinitive: "plonger", english: "To dive" },
+                    { infinitive: "protéger", english: "To protect" },
+                    { infinitive: "ranger", english: "To tidy" },
+                    { infinitive: "rédiger", english: "To write" },
+                    { infinitive: "songer", english: "To think" },
+                    { infinitive: "télécharger", english: "To download" },
+                    { infinitive: "venger", english: "To avenge" },
+                    { infinitive: "voyager", english: "To travel" }
+                ]
+            },
+            {
+                title: "Regular -IR Verbs",
+                endings: { je: 'is', tu: 'is', il: 'it', nous: 'issons', vous: 'issez', ils: 'issent' },
+                specialRule: () => ({}), // No special rules
+                verbs: [
+                    { infinitive: "affaiblir", english: "To weaken" },
+                    { infinitive: "agir", english: "To act" },
+                    { infinitive: "batir", english: "To build" },
+                    { infinitive: "blanchir", english: "To whiten" },
+                    { infinitive: "choisir", english: "To choose" },
+                    { infinitive: "démolir", english: "To demolish" },
+                    { infinitive: "désobéir", english: "To disobey" },
+                    { infinitive: "finir", english: "To finish" },
+                    { infinitive: "fournir", english: "To provide" },
+                    { infinitive: "grandir", english: "To grow up" },
+                    { infinitive: "grossir", english: "To gain weight" },
+                    { infinitive: "guérir", english: "To heal" },
+                    { infinitive: "jaunir", english: "To turn yellow" },
+                    { infinitive: "jouir", english: "To enjoy" },
+                    { infinitive: "maigrir", english: "To lose weight" },
+                    { infinitive: "nourrir", english: "To feed" },
+                    { infinitive: "obéir", english: "To obey" },
+                    { infinitive: "ralentir", english: "To slow down" },
+                    { infinitive: "réfléchir", english: "To think / To reflect" },
+                    { infinitive: "remplir", english: "To fill up" },
+                    { infinitive: "réunir", english: "To gather" },
+                    { infinitive: "réussir", english: "To succeed" },
+                    { infinitive: "rougir", english: "To blush" },
+                    { infinitive: "saisir", english: "To seize" },
+                    { infinitive: "salir", english: "To soil" },
+                    { infinitive: "subir", english: "To undergo" },
+                    { infinitive: "trahir", english: "To betray" },
+                    { infinitive: "unir", english: "To join" },
+                    { infinitive: "vieillir", english: "To age" }
+                ]
+            },
+            {
+                title: "Regular -RE Verbs",
+                endings: { je: 's', tu: 's', il: '', nous: 'ons', vous: 'ez', ils: 'ent' },
+                specialRule: () => ({}), // No special rules
+                verbs: [
+                    { infinitive: "attendre", english: "To wait" },
+                    { infinitive: "confondre", english: "To confuse" },
+                    { infinitive: "correspondre", english: "To correspond" },
+                    { infinitive: "défendre", english: "To defend" },
+                    { infinitive: "dépendre", english: "To depend" },
+                    { infinitive: "descendre", english: "To go down / To descend" },
+                    { infinitive: "entendre", english: "To hear" },
+                    { infinitive: "étendre", english: "To stretch" },
+                    { infinitive: "fondre", english: "To melt" },
+                    { infinitive: "pendre", english: "To hang" },
+                    { infinitive: "perdre", english: "To lose" },
+                    { infinitive: "rendre", english: "To give back" },
+                    { infinitive: "répondre", english: "To answer" },
+                    { infinitive: "tendre", english: "To tend" },
+                    { infinitive: "tondre", english: "To mow" },
+                    { infinitive: "tordre", english: "To twist" },
+                    { infinitive: "vendre", english: "To sell" }
+                ]
+            }
+        ];
+    
+        // Generate tables dynamically
+        const container = document.getElementById('grammarSections');
+        verbGroups.forEach(group => {
+            // Add heading
+            const h3 = document.createElement('h3');
+            h3.textContent = group.title;
+            container.appendChild(h3);
+    
+            // Add conjugation pattern table
+            const patternTable = document.createElement('table');
+            
+            patternTable.innerHTML = `
+                <tr><th>Subject</th><th>Ending</th></tr>
+                <tr><td>Je</td><td>-${group.endings.je}</td></tr>
+                <tr><td>Tu</td><td>-${group.endings.tu}</td></tr>
+                <tr><td>Il/Elle/On</td><td>-${group.endings.il}</td></tr>
+                <tr><td>Nous</td><td>-${group.endings.nous}${group.title.includes('-cer') ? ' (c→ç)' : group.title.includes('-ger') ? ' (add e)' : ''}</td></tr>
+                <tr><td>Vous</td><td>-${group.endings.vous}</td></tr>
+                <tr><td>Ils/Elles</td><td>-${group.endings.ils}</td></tr>
+            `;
+            container.appendChild(patternTable);
+    
+            // Add verb table
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Infinitive</th>
+                    <th>English</th>
+                    <th>Je</th>
+                    <th>Tu</th>
+                    <th>Il/Elle/On</th>
+                    <th>Nous</th>
+                    <th>Vous</th>
+                    <th>Ils/Elles</th>
+                </tr>
+            `;
+            var i=1;
+            group.verbs.forEach(verb => {
+                const stem = verb.infinitive.slice(0, verb.infinitive.endsWith('ir') ? -2 : -2); // Adjust stem based on ending
+                const special = group.specialRule(stem);
+                const forms = {
+                    je: stem + group.endings.je,
+                    tu: stem + group.endings.tu,
+                    il: stem + group.endings.il,
+                    nous: special.nous || stem + group.endings.nous,
+                    vous: stem + group.endings.vous,
+                    ils: stem + group.endings.ils
+                };
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td><input type="checkbox"></td>
+                    <td>${i}</td>
+                    <td>${verb.infinitive}<button class="play-btn" data-word="${verb.infinitive}">Play</button></td>
+                    <td>${verb.english}</td>
+                    <td ">${forms.je}<button class="play-btn" data-word="${forms.je}">Play</button></td>
+                    <td ">${forms.tu}<button class="play-btn" data-word="${forms.tu}">Play</button></td>
+                    <td ">${forms.il}<button class="play-btn" data-word="${forms.il}">Play</button></td>
+                    <td ">${forms.nous}<button class="play-btn" data-word="${forms.nous}">Play</button></td>
+                    <td ">${forms.vous}<button class="play-btn" data-word="${forms.vous}">Play</button></td>
+                    <td ">${forms.ils}<button class="play-btn" data-word="${forms.ils}">Play</button></td>
+                `;
+                table.appendChild(row);
+                i=i+1;
+            });
+            container.appendChild(table);
+        });
+    
+        function toBase64(str) {
+            return btoa(unescape(encodeURIComponent(str)));
+        }
+    
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const word = button.getAttribute('data-word');
+                const base64Word = toBase64(word);
+                const audioUrl = `https://voice.reverso.net/RestPronunciation.svc/v1/output=json/GetVoiceStream/voiceName=Alice22k?voiceSpeed=80&inputText=${base64Word}`;
+    
+                try {
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                } catch (error) {
+                    console.error('Error playing pronunciation:', error);
+                    alert('Failed to load pronunciation. This may be due to CORS restrictions.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

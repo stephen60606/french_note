@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular -ER Verbs</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { color: #333; }
+        h3 { color: #555; }
+        table { border-collapse: collapse; margin: 20px 0; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        .example { font-style: italic; color: #666; }
+        .play-btn { cursor: pointer; background: #95b6da; color: white; border: none; padding: 2px 6px; border-radius: 3px; margin: 0 2px; }
+        .conjugation-cell { display: flex; align-items: center; }
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .menu li {
+            margin: 15px 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #2980b9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #3498db;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+        </ul>
+    </div>
+    <div id="grammarSections">
+        <h2>Regular -ER Verbs</h2>
+
+        <h3>Conjugation Pattern for -ER Verbs</h3>
+        <p>Regular verbs ending in -ER follow this pattern in the present tense. Remove the -ER from the infinitive to get the stem, then add the appropriate ending based on the subject pronoun.</p>
+        <table>
+            <tr><th>Subject</th><th>Ending</th></tr>
+            <tr><td>Je (I)</td><td>-e</td></tr>
+            <tr><td>Tu (You)</td><td>-es</td></tr>
+            <tr><td>Il/Elle/On (He/She/We)</td><td>-e</td></tr>
+            <tr><td>Nous (We)</td><td>-ons</td></tr>
+            <tr><td>Vous (You)</td><td>-ez</td></tr>
+            <tr><td>Ils/Elles (They)</td><td>-ent</td></tr>
+        </table>
+        <p class="example">Example: Parler (to speak) → Je parle, Tu parles, Il parle, Nous parlons, Vous parlez, Ils parlent</p>
+
+        <h3>Common Regular -ER Verbs with Conjugations</h3>
+        <p>Below is a table of common regular -ER verbs, their English translations, and conjugations in the present tense. Click the "Play" button to hear the pronunciation of each form.</p>
+        <table id="verbTable">
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Infinitive</th>
+                <th>English</th>
+                <th>Je</th>
+                <th>Tu</th>
+                <th>Il/Elle/On</th>
+                <th>Nous</th>
+                <th>Vous</th>
+                <th>Ils/Elles</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // List of verbs with their English translations
+        const verbs = [
+            { infinitive: "abaisser", english: "To lower" },
+            { infinitive: "accepter", english: "To accept" },
+            { infinitive: "accompagner", english: "To accompany" },
+            { infinitive: "accorder", english: "To admit / To grant" },
+            { infinitive: "accrocher", english: "To hang" },
+            { infinitive: "arracher", english: "To pull up / out" },
+            { infinitive: "accuser", english: "To accuse" },
+            { infinitive: "admirer", english: "To admire" },
+            { infinitive: "adorer", english: "To adore" },
+            { infinitive: "adresser", english: "To address" },
+            { infinitive: "aider", english: "To help" },
+            { infinitive: "aimer", english: "To like / To love" },
+            { infinitive: "ajouter", english: "To add" },
+            { infinitive: "amuser", english: "To amuse" },
+            { infinitive: "apporter", english: "To bring" },
+            { infinitive: "approcher", english: "To approach" },
+            { infinitive: "approuver", english: "To approve" },
+            { infinitive: "armer", english: "To arm" },
+            { infinitive: "arrêter", english: "To stop" },
+            { infinitive: "arriver", english: "To arrive" },
+            { infinitive: "assister", english: "To attend" },
+            { infinitive: "assurer", english: "To assure" },
+            { infinitive: "attaquer", english: "To attack" },
+            { infinitive: "attirer", english: "To attract" },
+            { infinitive: "attraper", english: "To catch" },
+            { infinitive: "augmenter", english: "To increase" },
+            { infinitive: "baisser", english: "To lower" },
+            { infinitive: "bavarder", english: "To chat" },
+            { infinitive: "blaguer", english: "To joke" },
+            { infinitive: "blâmer", english: "To blame" },
+            { infinitive: "blesser", english: "To hurt / To offend" },
+            { infinitive: "briser", english: "To break" },
+            { infinitive: "brosser", english: "To brush" },
+            { infinitive: "brûler", english: "To burn" },
+            { infinitive: "cacher", english: "To hide" },
+            { infinitive: "casser", english: "To break" },
+            { infinitive: "causer", english: "To cause" },
+            { infinitive: "célébrer", english: "To celebrate" },
+            { infinitive: "cesser", english: "To cease" },
+            { infinitive: "chanter", english: "To sing" },
+            { infinitive: "chasser", english: "To hunt" },
+            { infinitive: "chercher", english: "To look for / To search" },
+            { infinitive: "chuchoter", english: "To whisper" },
+            { infinitive: "coller", english: "To stick" },
+            { infinitive: "commander", english: "To order" },
+            { infinitive: "comparer", english: "To compare" },
+            { infinitive: "compter", english: "To count / To intend" },
+            { infinitive: "concerner", english: "To concern" },
+            { infinitive: "conseiller", english: "To recommend" },
+            { infinitive: "consommer", english: "To consume" },
+            { infinitive: "continuer", english: "To continue" },
+            { infinitive: "contrôler", english: "To control" },
+            { infinitive: "coucher", english: "To put to bed" },
+            { infinitive: "couper", english: "To cut" },
+            { infinitive: "coûter", english: "To cost" },
+            { infinitive: "crier", english: "To shout" },
+            { infinitive: "cuisiner", english: "To cook" },
+            { infinitive: "culpabiliser", english: "To make one feel guilty" },
+            { infinitive: "danser", english: "To dance" },
+            { infinitive: "déchirer", english: "To rip" },
+            { infinitive: "décider", english: "To decide" },
+            { infinitive: "déjeuner", english: "To have lunch" },
+            { infinitive: "demander", english: "To ask" },
+            { infinitive: "demeurer", english: "To live / To stay" },
+            { infinitive: "dépasser", english: "To exceed" },
+            { infinitive: "dépêcher", english: "To hurry" },
+            { infinitive: "dépenser", english: "To spend" },
+            { infinitive: "désirer", english: "To desire / To wish" },
+            { infinitive: "dessiner", english: "To draw" },
+            { infinitive: "détester", english: "To hate" },
+            { infinitive: "détourner", english: "To divert" },
+            { infinitive: "développer", english: "To develop" },
+            { infinitive: "deviner", english: "To guess" },
+            { infinitive: "diminuer", english: "To diminish" },
+            { infinitive: "dîner", english: "To have dinner" },
+            { infinitive: "discuter", english: "To discuss" },
+            { infinitive: "donner", english: "To give" },
+            { infinitive: "doubler", english: "To double" },
+            { infinitive: "douter", english: "To doubt" },
+            { infinitive: "échapper", english: "To escape" },
+            { infinitive: "échouer", english: "To fail" },
+            { infinitive: "écouter", english: "To listen" },
+            { infinitive: "écraser", english: "To crush" },
+            { infinitive: "éloigner", english: "To move away" },
+            { infinitive: "embrasser", english: "To kiss / To embrace" },
+            { infinitive: "empêcher", english: "To prevent" },
+            { infinitive: "emprunter", english: "To borrow" },
+            { infinitive: "enregistrer", english: "To record / To save" },
+            { infinitive: "enseigner", english: "To teach" },
+            { infinitive: "enterrer", english: "To bury" },
+            { infinitive: "entraîner", english: "To cause / To lead to" },
+            { infinitive: "entrer", english: "To enter" },
+            { infinitive: "épouser", english: "To marry" },
+            { infinitive: "étonner", english: "To astonish" },
+            { infinitive: "étudier", english: "To study" },
+            { infinitive: "éviter", english: "To avoid" },
+            { infinitive: "excuser", english: "To excuse" },
+            { infinitive: "exister", english: "To exist" },
+            { infinitive: "expliquer", english: "To explain" },
+            { infinitive: "explorer", english: "To explore" },
+            { infinitive: "exprimer", english: "To express" },
+            { infinitive: "féliciter", english: "To congratulate" },
+            { infinitive: "fermer", english: "To close" },
+            { infinitive: "fixer", english: "To fix" },
+            { infinitive: "fonder", english: "To found" },
+            { infinitive: "fouiller", english: "To search" },
+            { infinitive: "frapper", english: "To knock / To hit" },
+            { infinitive: "fumer", english: "To smoke" },
+            { infinitive: "gagner", english: "To win / To earn / To gain" },
+            { infinitive: "garder", english: "To keep" },
+            { infinitive: "gaspiller", english: "To waste" },
+            { infinitive: "goûter", english: "To taste" },
+            { infinitive: "gratter", english: "To scratch" },
+            { infinitive: "grimper", english: "To climb" },
+            { infinitive: "habiller", english: "To dress" },
+            { infinitive: "habiter", english: "To live" },
+            { infinitive: "hésiter", english: "To hesitate" },
+            { infinitive: "ignorer", english: "To ignore" },
+            { infinitive: "importer", english: "To import" },
+            { infinitive: "indiquer", english: "To indicate" },
+            { infinitive: "informer", english: "To inform" },
+            { infinitive: "insister", english: "To insist" },
+            { infinitive: "intéresser", english: "To interest" },
+            { infinitive: "inventer", english: "To invent" },
+            { infinitive: "inviter", english: "To invite" },
+            { infinitive: "jouer", english: "To play" },
+            { infinitive: "jurer", english: "To swear / To vow" },
+            { infinitive: "klaxonner", english: "To honk" },
+            { infinitive: "laisser", english: "To leave" },
+            { infinitive: "laver", english: "To wash" },
+            { infinitive: "louer", english: "To rent" },
+            { infinitive: "manquer", english: "To miss" },
+            { infinitive: "marcher", english: "To walk" },
+            { infinitive: "mériter", english: "To merit" },
+            { infinitive: "mesurer", english: "To measure" },
+            { infinitive: "monter", english: "To climb / To go up" },
+            { infinitive: "montrer", english: "To show" },
+            { infinitive: "moquer", english: "To mock" },
+            { infinitive: "négocier", english: "To negotiate" },
+            { infinitive: "nier", english: "To deny" },
+            { infinitive: "nommer", english: "To name / To appoint" },
+            { infinitive: "noter", english: "To write down" },
+            { infinitive: "occuper", english: "To occupy" },
+            { infinitive: "oublier", english: "To forget" },
+            { infinitive: "pardonner", english: "To forgive" },
+            { infinitive: "parler", english: "To speak / To talk" },
+            { infinitive: "participer", english: "To participate" },
+            { infinitive: "passer", english: "To pass" },
+            { infinitive: "pêcher", english: "To fish" },
+            { infinitive: "peigner", english: "To comb" },
+            { infinitive: "penser", english: "To think" },
+            { infinitive: "persuader", english: "To persuade" },
+            { infinitive: "plaisanter", english: "To joke" },
+            { infinitive: "planter", english: "To plant" },
+            { infinitive: "pleurer", english: "To cry" },
+            { infinitive: "plier", english: "To fold" },
+            { infinitive: "porter", english: "To carry / To wear" },
+            { infinitive: "poser", english: "To put down" },
+            { infinitive: "pousser", english: "To push" },
+            { infinitive: "préparer", english: "To prepare" },
+            { infinitive: "présenter", english: "To present / To introduce" },
+            { infinitive: "prêter", english: "To lend" },
+            { infinitive: "prier", english: "To pray" },
+            { infinitive: "proposer", english: "To suggest" },
+            { infinitive: "prouver", english: "To prove" },
+            { infinitive: "puer", english: "To stink" },
+            { infinitive: "quitter", english: "To leave" },
+            { infinitive: "raconter", english: "To tell" },
+            { infinitive: "rassurer", english: "To reassure" },
+            { infinitive: "refuser", english: "To refuse" },
+            { infinitive: "regarder", english: "To look at" },
+            { infinitive: "regretter", english: "To regret" },
+            { infinitive: "remarquer", english: "To notice" },
+            { infinitive: "remercier", english: "To thank" },
+            { infinitive: "rencontrer", english: "To meet" },
+            { infinitive: "rentrer", english: "To return" },
+            { infinitive: "réparer", english: "To repair" },
+            { infinitive: "repasser", english: "To iron" },
+            { infinitive: "reposer", english: "To put back" },
+            { infinitive: "représenter", english: "To represent" },
+            { infinitive: "ressembler", english: "To look like" },
+            { infinitive: "rester", english: "To stay" },
+            { infinitive: "retourner", english: "To return" },
+            { infinitive: "retrouver", english: "To find" },
+            { infinitive: "réveiller", english: "To wake up" },
+            { infinitive: "rêver", english: "To dream" },
+            { infinitive: "risquer", english: "To risk" },
+            { infinitive: "rouler", english: "To roll / To drive" },
+            { infinitive: "sauter", english: "To jump" },
+            { infinitive: "sauver", english: "To save" },
+            { infinitive: "secouer", english: "To shake" },
+            { infinitive: "séjourner", english: "To stay" },
+            { infinitive: "sembler", english: "To seem" },
+            { infinitive: "séparer", english: "To separate" },
+            { infinitive: "siffler", english: "To whistle" },
+            { infinitive: "signaler", english: "To signal" },
+            { infinitive: "signer", english: "To sign" },
+            { infinitive: "signifier", english: "To mean" },
+            { infinitive: "skier", english: "To ski" },
+            { infinitive: "sonner", english: "To ring" },
+            { infinitive: "souffler", english: "To blow" },
+            { infinitive: "souhaiter", english: "To wish" },
+            { infinitive: "supporter", english: "To support" },
+            { infinitive: "supposer", english: "To suppose" },
+            { infinitive: "taper", english: "To type" },
+            { infinitive: "téléphoner", english: "To call" },
+            { infinitive: "tenter", english: "To try" },
+            { infinitive: "terminer", english: "To end" },
+            { infinitive: "tirer", english: "To pull" },
+            { infinitive: "tomber", english: "To fall" },
+            { infinitive: "toucher", english: "To touch / To affect" },
+            { infinitive: "tourner", english: "To turn" },
+            { infinitive: "tousser", english: "To cough" },
+            { infinitive: "traiter", english: "To treat" },
+            { infinitive: "travailler", english: "To work" },
+            { infinitive: "traverser", english: "To cross" },
+            { infinitive: "tromper", english: "To mislead" },
+            { infinitive: "trouver", english: "To find" },
+            { infinitive: "tuer", english: "To kill" },
+            { infinitive: "user", english: "To wear out / To use" },
+            { infinitive: "utiliser", english: "To use" },
+            { infinitive: "varier", english: "To vary" },
+            { infinitive: "vérifier", english: "To verify" },
+            { infinitive: "verser", english: "To pour" },
+            { infinitive: "viser", english: "To aim" },
+            { infinitive: "visiter", english: "To visit" },
+            { infinitive: "voler", english: "To steal / To fly" },
+            { infinitive: "voter", english: "To vote" }
+        ];
+
+        // Conjugation endings
+        const endings = {
+            je: 'e',
+            tu: 'es',
+            il: 'e',
+            nous: 'ons',
+            vous: 'ez',
+            ils: 'ent'
+        };
+
+        // Populate the table
+        const table = document.getElementById('verbTable');
+        var i=1;
+        verbs.forEach(verb => {
+            const stem = verb.infinitive.slice(0, -2); // Remove 'er'
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><input type="checkbox"></td>
+                <td>${i}</td>
+                <td>${verb.infinitive} <button class="play-btn" data-word="${verb.infinitive}">Play</button></td>
+                <td>${verb.english}</td>
+                <td >${stem}${endings.je}<button class="play-btn" data-word="${stem}${endings.je}">Play</button></td>
+                <td >${stem}${endings.tu}<button class="play-btn" data-word="${stem}${endings.tu}">Play</button></td>
+                <td >${stem}${endings.il}<button class="play-btn" data-word="${stem}${endings.il}">Play</button></td>
+                <td >${stem}${endings.nous}<button class="play-btn" data-word="${stem}${endings.nous}">Play</button></td>
+                <td >${stem}${endings.vous}<button class="play-btn" data-word="${stem}${endings.vous}">Play</button></td>
+                <td >${stem}${endings.ils}<button class="play-btn" data-word="${stem}${endings.ils}">Play</button></td>
+            `;
+            
+            table.appendChild(row);
+            i=i+1;
+        });
+
+        function toBase64(str) {
+            return btoa(unescape(encodeURIComponent(str)));
+        }
+    
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const word = button.getAttribute('data-word');
+                const base64Word = toBase64(word);
+                const audioUrl = `https://voice.reverso.net/RestPronunciation.svc/v1/output=json/GetVoiceStream/voiceName=Alice22k?voiceSpeed=80&inputText=${base64Word}`;
+    
+                try {
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                } catch (error) {
+                    console.error('Error playing pronunciation:', error);
+                    alert('Failed to load pronunciation. This may be due to CORS restrictions.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
